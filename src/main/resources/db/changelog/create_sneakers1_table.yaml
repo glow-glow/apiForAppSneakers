@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: create_sneakers1_table
+      author: lexa
+      changes:
+        - createTable:
+            tableName: sneakers
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_sneakers
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: url_sneakers
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: old_price_sneakers
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: new_price_sneakers
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: img_url
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: shop_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_shop
+                    referencedTableName: shop
+                    referencedColumnNames: id

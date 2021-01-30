@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: create_shop_table
+      author: lexa
+      changes:
+        - createTable:
+            tableName: shop
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_shop
+                  type: varchar(30)
+                  constraints:
+                    nullable: true
+              - column:
+                    name: img_url
+                    type: varchar(200)
+                    constraints:
+                      nullable: true
